@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jschreye <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 15:24:15 by jschreye          #+#    #+#             */
-/*   Updated: 2021/12/13 10:59:58 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/02/23 12:37:22 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int	ft_strlen(char *str)
+int	ft_strlenlen(char *str)
 {
 	int	i;
 
@@ -33,7 +33,7 @@ char	*join(char *str, char c)
 	int		len;
 
 	i = 0;
-	len = ft_strlen(str);
+	len = ft_strlenlen(str);
 	mem = malloc(len + 2);
 	if (mem == 0)
 		return (0);
@@ -68,4 +68,5 @@ char	*get_next_line(int fd)
 		c = read_check(&info);
 	}
 	return (str);
+
 }

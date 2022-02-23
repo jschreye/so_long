@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jschreye <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 15:24:49 by jschreye          #+#    #+#             */
-/*   Updated: 2021/12/03 09:41:05 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/02/23 12:37:33 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_read
 int		init_check(int fd, t_read *info);
 char	read_check(t_read *info);
 char	*get_next_line(int fd);
-int		ft_strlen(char *str);
+int		ft_strlenlen(char *str);
 char	*join(char *str, char c);
 
 #endif
