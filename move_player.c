@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   move_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,31 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mlx/mlx.h"
 #include "so_long.h"
 
-int	ft_check_key(int keycode, t_data *img)
+t_data ft_move_player(int keycode, t_data img)
 {
-	if (keycode == 53)
-		exit(0);
-	if (keycode == 13)
-		mlx_destroy_image(img->mlx, img->img);
-	if (keycode == 13 || keycode == 0 || keycode == 1 || keycode == 2
-		|| keycode == 62 || keycode == 59 || keycode == 61 || keycode == 60)
-		ft_move_player(keycode, *img);
-	return(0);
-}
-
-int	main(int argc, char **argv)
-{
-	t_data	img;
-	
-	argc = 0;
-	img.fd = open(argv[1], O_RDONLY);
-	img.mlx = mlx_init();
-	img.mlx_win = mlx_new_window(img.mlx, 1920, 1080, "bande de fouf!");
-	img = ft_get_array_with_ber(img);
-	img = ft_put_tilesets(img);
-	mlx_key_hook(img.mlx_win, ft_check_key, &img);
-	mlx_loop(img.mlx);
+    if ((keycode == 13 || keycode == 62) && img.array[img.x][img.y] != 1)
+        img.y -= 30;
+    if ((keycode == 0 || keycode == 59) && img.array[img.x][img.y] != 1)
+        img.x -= 30;
+    if ((keycode == 1 || keycode == 61) && img.array[img.x][img.y] != 1)
+        img.y += 30;
+    if ((keycode == 2 || keycode == 60) && img.array[img.x][img.y] != 1)
+        img.x += 30;
+    return (img);
 }

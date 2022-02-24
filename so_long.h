@@ -24,6 +24,8 @@ typedef struct	s_data {
 	void		*mlx_win;
 	char		*relative_path;
 	char		**array;
+	int			player_x;
+	int			player_y;
 	int			c;
 	int			fd;
 	int			x;
@@ -38,5 +40,6 @@ t_data			ft_put_img_wall(t_data img);
 t_data			ft_put_img_ground(t_data img);
 t_data  		ft_put_img_png(t_data img);
 t_data      	ft_put_tilesets(t_data img);
+t_data 			ft_move_player(int keycode, t_data img);
 
 #endif
