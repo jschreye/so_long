@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_array_with_ber.c                               :+:      :+:    :+:   */
+/*   put_tiles.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,28 +9,40 @@
 /*   Updated: 2022/02/23 12:43:59 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "gnlstruc/get_next_line.h"
 #include "so_long.h"
 #include "mlx/mlx.h"
 
-t_data	ft_get_array_with_ber(t_data img)
+t_data  ft_put_img_wall(t_data img)
 {
-	char    *tab;
-    char    *str_full_ber;
-
-	img.c = -1;
-	str_full_ber = ft_strdup("");
-   	while (1)
-	{
-		tab = get_next_line(img.fd);
-		img.c++;
-		if (tab != NULL)
-			str_full_ber = ft_strjoin(str_full_ber, tab);
-		if (tab == NULL)
-			break;
-		free(tab);
-	}
-	img.array = ft_split(str_full_ber, '\n');
-	return(img);
+	    img.relative_path = "img/choppe.xpm";
+	    img.img = ft_put_img(img);
+		mlx_put_image_to_window(img.mlx, img.mlx_win, img.img, img.x, img.y);
+        return(img);
 }
+
+t_data  ft_put_img_ground(t_data img)
+{
+		img.relative_path = "img/herbe.xpm";
+		img.img = ft_put_img(img);
+		mlx_put_image_to_window(img.mlx, img.mlx_win, img.img, img.x, img.y);
+        return(img);
+}
+
+t_data  ft_put_img_png(t_data img)
+{
+		img.relative_path = "img/pngzombie.xpm";
+		img.img = ft_put_img(img);
+		mlx_put_image_to_window(img.mlx, img.mlx_win, img.img, img.x, img.y);
+        return(img);
+}
+
+/*t_data  ft_put_img_four(t_data img)
+{
+    
+}
+
+t_data  ft_put_img_five(t_data img)
+{
+    
+}*/

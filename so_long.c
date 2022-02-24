@@ -21,6 +21,7 @@ int	main(int argc, char **argv)
 	img.fd = open(argv[1], O_RDONLY);
 	img.mlx = mlx_init();
 	img.mlx_win = mlx_new_window(img.mlx, 1920, 1080, "bande de fouf!");
-	img = ft_change_map_with_img(img);
+	img = ft_get_array_with_ber(img);
+	img = ft_put_tilesets(img);
 	mlx_loop(img.mlx);
 }

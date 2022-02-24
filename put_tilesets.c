@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_array_with_ber.c                               :+:      :+:    :+:   */
+/*   put_tilesets.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,28 +9,43 @@
 /*   Updated: 2022/02/23 12:43:59 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "gnlstruc/get_next_line.h"
 #include "so_long.h"
 #include "mlx/mlx.h"
+#include "gnlstruc/get_next_line.h"
 
-t_data	ft_get_array_with_ber(t_data img)
+t_data  ft_check_value_array(t_data img, int c)
 {
-	char    *tab;
-    char    *str_full_ber;
+    if (c == 48)
+       img = ft_put_img_ground(img);
+    if (c == 49)
+        img = ft_put_img_wall(img);
+    if (c == 80)
+        img = ft_put_img_png(img);
+    return (img);
 
-	img.c = -1;
-	str_full_ber = ft_strdup("");
-   	while (1)
-	{
-		tab = get_next_line(img.fd);
-		img.c++;
-		if (tab != NULL)
-			str_full_ber = ft_strjoin(str_full_ber, tab);
-		if (tab == NULL)
-			break;
-		free(tab);
-	}
-	img.array = ft_split(str_full_ber, '\n');
-	return(img);
+}
+
+t_data      ft_put_tilesets(t_data img)
+{
+    int i;
+    int j;
+
+    img.y = 0;
+    img.x = 0;
+    i = 0;
+    j = 0;
+    while (i < img.c)
+    {
+        j = 0;
+        img.x = 0;
+        while (img.array[i][j] != '\0')
+        {
+            img = ft_check_value_array(img, img.array[i][j]);
+            img.x += 30;
+            j++;
+        }
+        img.y += 30;
+        i++;
+    }
+    return (img);
 }
