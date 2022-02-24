@@ -16,7 +16,7 @@ CFLAGS = -Wall -Werror -Wextra
 
 NAME = so_long
 
-SRC = change_map_with_img.c put_img.c so_long.c gnlstruc/get_next_line_utils.c gnlstruc/get_next_line.c
+SRC = get_array_with_ber.c change_map_with_img.c put_img.c so_long.c gnlstruc/get_next_line_utils.c gnlstruc/get_next_line.c
 
 OBJ = $(SRC:.c=.o)
 

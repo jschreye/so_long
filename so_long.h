@@ -22,8 +22,6 @@ typedef struct	s_data {
 	void		*img;
 	void		*mlx;
 	void		*mlx_win;
-	char		*str_full_ber;
-	char		*tab;
 	char		*relative_path;
 	char		**array;
 	int			fd;
@@ -34,5 +32,6 @@ typedef struct	s_data {
 void			my_mlx_pixel_put(t_data *data, int x, int y, int color);
 void			*ft_put_img(t_data img);
 t_data    		ft_change_map_with_img(t_data img);
+char			**ft_get_array_with_ber(t_data img, int fd);
 
 #endif
