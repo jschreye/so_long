@@ -6,46 +6,50 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:27:33 by jschreye          #+#    #+#             */
-/*   Updated: 2022/02/23 12:43:59 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/02/25 12:21:36 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "so_long.h"
+
 #include "mlx/mlx.h"
 #include "gnlstruc/get_next_line.h"
+#include "so_long.h"
 
-t_data  ft_check_value_array(t_data img, int c)
+void  ft_check_value_array(t_data *img)
 {
-    if (c == 48)
-       img = ft_put_img_ground(img);
-    if (c == 49)
-        img = ft_put_img_wall(img);
-    if (c == 80)
-        img = ft_put_img_png(img);
-    return (img);
-
+    if (img->array[img->i][img->j] == 48)
+       ft_put_img_ground(img);
+    if (img->array[img->i][img->j] == 49)
+        ft_put_img_wall(img);
+    if (img->array[img->i][img->j] == 80)
+        ft_put_img_png(img);
 }
 
-t_data      ft_put_tilesets(t_data img)
+void  ft_check_coins_player(t_data *img)
 {
-    int i;
-    int j;
-
-    img.y = 0;
-    img.x = 0;
-    i = 0;
-    j = 0;
-    while (i < img.c)
-    {
-        j = 0;
-        img.x = 0;
-        while (img.array[i][j] != '\0')
+    if (img->array[img->i][img->j] == 'P')
         {
-            img = ft_check_value_array(img, img.array[i][j]);
-            img.x += 30;
-            j++;
+            img->player_j = img->i;
+            img->player_i = img->j;
         }
-        img.y += 30;
-        i++;
+    if (img->array[img->i][img->j] == 67)
+        img->coins++;
+}
+void    ft_put_tilesets(t_data *img)
+{
+    img->i = 0;
+    img->j = 0;
+    while (img->i < img->c)
+    {
+        img->j = 0;
+        img->x = 0;
+        while (img->array[img->i][img->j] != '\0')
+        {
+            ft_check_coins_player(img);
+            ft_check_value_array(img);
+            img->x += 30;
+            img->j++;
+        }
+        img->y += 30;
+        img->i++;
     }
-    return (img);
 }

@@ -6,17 +6,17 @@
 #    By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/15 09:25:41 by jschreye          #+#    #+#              #
-#    Updated: 2022/02/23 12:39:28 by jschreye         ###   ########.fr        #
+#    Updated: 2022/02/25 13:38:34 by jschreye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -fsanitize=address -g3
 
 NAME = so_long
 
-SRC = move_player.c put_tiles.c put_tilesets.c get_array_with_ber.c put_img.c so_long.c gnlstruc/get_next_line_utils.c gnlstruc/get_next_line.c
+SRC = move_player_left.c move_player_right.c move_player_down.c move_player_up.c check_key.c put_tiles.c put_tilesets.c get_array_with_ber.c put_img.c so_long.c gnlstruc/get_next_line_utils.c gnlstruc/get_next_line.c
 
 OBJ = $(SRC:.c=.o)
 

@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_array_with_ber.c                               :+:      :+:    :+:   */
+/*   move_player_right.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 13:27:33 by jschreye          #+#    #+#             */
-/*   Updated: 2022/02/25 11:19:12 by jschreye         ###   ########.fr       */
+/*   Created: 2022/02/25 09:14:41 by jschreye          #+#    #+#             */
+/*   Updated: 2022/02/25 13:37:44 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "gnlstruc/get_next_line.h"
 #include "so_long.h"
-#include "mlx/mlx.h"
 
-void	ft_get_array_with_ber(t_data *img)
+void    ft_move_player_right(t_data *img)
 {
-	char    *tab;
-    char    *str_full_ber;
-
-	img->c = -1;
-	str_full_ber = ft_strdup("");
-   	while (1)
-	{
-		tab = get_next_line(img->fd);
-		img->c++;
-		if (tab != NULL)
-			str_full_ber = ft_strjoin(str_full_ber, tab);
-		if (tab == NULL)
-			break;
-		free(tab);
-	}
-	img->array = ft_split(str_full_ber, '\n');
+    if (img->array[img->player_j][img->player_i + 1] == '0')
+    {
+        img->x = 0;
+        img->y = 0;
+        img->array[img->player_j][img->player_i + 1] = 'P';
+        img->array[img->player_j][img->player_i] = '0';
+        ft_put_tilesets(img);
+    }
 }
