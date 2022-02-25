@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:27:33 by jschreye          #+#    #+#             */
-/*   Updated: 2022/02/25 12:21:36 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/02/25 14:35:32 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void    ft_put_tilesets(t_data *img)
 {
     img->i = 0;
     img->j = 0;
+    img->coins = 0;
     while (img->i < img->c)
     {
         img->j = 0;

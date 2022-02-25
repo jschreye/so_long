@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 09:29:31 by jschreye          #+#    #+#             */
-/*   Updated: 2022/02/25 12:32:34 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/02/25 15:06:14 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	comment(t_data img)
 			printf("%c", img.array[i][j]);
 		}
 		printf("\n");
+		printf("coins:%d\n", img.coins);
 	}
 }
 
@@ -36,9 +37,9 @@ int	main(int argc, char **argv)
     img.x = 0;
 	img.coins = 0;
 	img.fd = open(argv[1], O_RDONLY);
+	ft_get_array_with_ber(&img);
 	img.mlx = mlx_init();
 	img.mlx_win = mlx_new_window(img.mlx, 1920, 1080, "bande de fouf!");
-	ft_get_array_with_ber(&img);
 	ft_put_tilesets(&img);
 	mlx_key_hook(img.mlx_win, ft_check_key, &img);
 	comment(img);
