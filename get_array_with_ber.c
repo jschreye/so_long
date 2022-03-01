@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:27:33 by jschreye          #+#    #+#             */
-/*   Updated: 2022/02/28 09:30:41 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/03/01 15:30:08 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	ft_get_array_with_ber(t_data *img)
 		free(tab);
 	}
 	img->array = ft_split(str_full_ber, '\n');
+	free(str_full_ber);
 	ft_check_size(img);
 }
 

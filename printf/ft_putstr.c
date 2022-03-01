@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_key.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/15 09:29:31 by jschreye          #+#    #+#             */
-/*   Updated: 2022/03/01 12:10:31 by jschreye         ###   ########.fr       */
+/*   Created: 2021/11/15 08:58:39 by jschreye          #+#    #+#             */
+/*   Updated: 2022/03/01 09:08:14 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "ft_printf.h"
 
-
-int	ft_check_key(int keycode, t_data *img)
+int	ft_putchar(char c, int i)
 {
-	if (keycode == 53)
-		exit(0);
-	if (keycode == 13 || keycode == 126)
-		ft_move_player_up(img);
-	if (keycode == 1 || keycode == 125)
-		ft_move_player_down(img);
-	if(keycode == 2 || keycode == 124)
-		ft_move_player_right(img);
-	if(keycode == 0 || keycode == 123)
-		ft_move_player_left(img);
-	return(0);
+	write (1, &c, 1);
+	i++;
+	return (i);
+}
+
+int	ft_put_str(char *str, int c)
+{
+	int	i;
+
+	i = 0;
+	if (!str)
+	{
+		write (1, "(null)", 6);
+		return (c + 6);
+	}
+	while (str[i])
+	{	
+		ft_putchar(str[i], 0);
+		i++;
+	}
+	return (c + i);
 }

@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_key.c                                        :+:      :+:    :+:   */
+/*   put_tiles_coins.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/15 09:29:31 by jschreye          #+#    #+#             */
-/*   Updated: 2022/03/01 12:10:31 by jschreye         ###   ########.fr       */
+/*   Created: 2022/03/01 13:43:48 by jschreye          #+#    #+#             */
+/*   Updated: 2022/03/01 14:43:05 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-
-int	ft_check_key(int keycode, t_data *img)
+void    ft_put_tiles_coins(t_data *img)
 {
-	if (keycode == 53)
-		exit(0);
-	if (keycode == 13 || keycode == 126)
-		ft_move_player_up(img);
-	if (keycode == 1 || keycode == 125)
-		ft_move_player_down(img);
-	if(keycode == 2 || keycode == 124)
-		ft_move_player_right(img);
-	if(keycode == 0 || keycode == 123)
-		ft_move_player_left(img);
-	return(0);
+		img->relative_path = "img/choppe.xpm";
+		ft_put_img(img);
+		mlx_put_image_to_window(img->mlx, img->mlx_win, img->img, img->x, img->y);    
 }

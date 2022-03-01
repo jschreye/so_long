@@ -6,11 +6,12 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 09:29:41 by jschreye          #+#    #+#             */
-/*   Updated: 2022/02/28 17:08:53 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/03/01 14:41:10 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx/mlx.h"
+#include "printf/ft_printf.h"
 #include <stdio.h>
 #include <fcntl.h>
 #include "gnlstruc/get_next_line.h"
@@ -29,6 +30,7 @@ typedef struct	s_data {
 	int			count_p;
 	int			count_e;
 	int			count_c;
+	int			count_move;
 	int			i;
 	int			j;
 	int			size_j;
@@ -55,6 +57,9 @@ void	ft_check_value_array(t_data *img);
 void	ft_check_error(char *argv, t_data *img);
 void	ft_check_items_in_map(t_data *img);
 void    ft_count_items(char c, t_data *img);
+void    ft_print_count(t_data *img);
+void    ft_put_tiles_coins(t_data *img);
+void	ft_put_tiles_exit(t_data *img);
 int		ft_check_key(int keycode, t_data *img);
 
 #endif

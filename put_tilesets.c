@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:27:33 by jschreye          #+#    #+#             */
-/*   Updated: 2022/02/28 09:00:55 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/03/01 14:39:26 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ void  ft_check_value_array(t_data *img)
         ft_put_img_wall(img);
     if (img->array[img->i][img->j] == 80)
         ft_put_img_png(img);
+    if (img->array[img->i][img->j] == 67)
+        ft_put_tiles_coins(img);
+    if (img->array[img->i][img->j] == 69)
+        ft_put_tiles_exit(img);
 }
 
 void  ft_check_coins_player(t_data *img)
