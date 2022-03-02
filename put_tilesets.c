@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:27:33 by jschreye          #+#    #+#             */
-/*   Updated: 2022/03/02 12:22:24 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/03/02 13:50:23 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void  ft_check_value_array(t_data *img)
     if (img->array[img->i][img->j] == 67)
         ft_put_tiles_coins(img);
     if (img->array[img->i][img->j] == 77)
-        ft_put_tiles_monster(img);
+        ft_put_monster(img);
     if (img->array[img->i][img->j] == 69)
         ft_put_tiles_exit(img);
     if (img->count_c == 0 && img->array[img->i][img->j] == 69)
@@ -38,6 +38,11 @@ void  ft_check_coins_player(t_data *img)
         {
             img->player_j = img->i;
             img->player_i = img->j;
+        }
+    if (img->array[img->i][img->j] == 'M')
+        {
+            img->monster_j = img->i;
+            img->monster_i = img->j;
         }
     if (img->array[img->i][img->j] == 67)
         img->coins++;
