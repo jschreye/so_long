@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 09:29:41 by jschreye          #+#    #+#             */
-/*   Updated: 2022/03/01 14:41:10 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/03/02 12:22:47 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct	s_data {
 	void		*mlx_win;
 	char		*relative_path;
 	char		**array;
+	int			keycode_value;
 	int			player_i;
 	int			player_j;
 	int			count_p;
@@ -60,6 +61,8 @@ void    ft_count_items(char c, t_data *img);
 void    ft_print_count(t_data *img);
 void    ft_put_tiles_coins(t_data *img);
 void	ft_put_tiles_exit(t_data *img);
+void	ft_put_tiles_exit_two(t_data *img);
+void    ft_put_tiles_monster(t_data *img);
 int		ft_check_key(int keycode, t_data *img);
 
 #endif

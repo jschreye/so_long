@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 09:57:36 by jschreye          #+#    #+#             */
-/*   Updated: 2022/03/01 15:30:23 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/03/01 16:25:36 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ void    ft_print_count(t_data *img)
     dst = ft_strjoin(str, count);
     mlx_string_put(img->mlx, img->mlx_win, 10, 15, 0x0000ff, dst);
     free(dst);
+    free(count);
 }

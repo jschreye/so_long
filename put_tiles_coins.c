@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 13:43:48 by jschreye          #+#    #+#             */
-/*   Updated: 2022/03/01 14:43:05 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/03/02 11:45:45 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void    ft_put_tiles_coins(t_data *img)
 {
-		img->relative_path = "img/choppe.xpm";
+		img->relative_path = "img/coins.xpm";
 		ft_put_img(img);
 		mlx_put_image_to_window(img->mlx, img->mlx_win, img->img, img->x, img->y);    
 }

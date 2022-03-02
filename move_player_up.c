@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 09:14:43 by jschreye          #+#    #+#             */
-/*   Updated: 2022/03/01 11:40:39 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/03/02 12:18:19 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void    ft_move_player_up(t_data *img)
         img->array[img->player_j - 1][img->player_i] = 'P';
         img->array[img->player_j][img->player_i] = '0';
         img->coins--;
+        img->count_c--;
         img->count_move++;
         ft_put_tilesets(img);
         ft_print_count(img);

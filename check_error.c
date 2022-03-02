@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:28:00 by jschreye          #+#    #+#             */
-/*   Updated: 2022/02/28 17:12:41 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/03/02 11:57:57 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void    ft_check_map_ber(char *argv)
 
 void    ft_check_items(char c)
 {
-    if (c != '1' && c != '0' && c != 'P' && c != 'E' && c != 'C')
+    if (c != '1' && c != '0' && c != 'P' && c != 'E' && c != 'C' && c != 'M')
         {
             write (1, "Error\n THE ITEMS IS FALSE", 25);
             exit(0);

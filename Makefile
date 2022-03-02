@@ -6,7 +6,7 @@
 #    By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/15 09:25:41 by jschreye          #+#    #+#              #
-#    Updated: 2022/03/01 15:15:48 by jschreye         ###   ########.fr        #
+#    Updated: 2022/03/02 12:22:41 by jschreye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Werror -Wextra -g -fsanitize=address
 
 NAME = so_long
 
-SRC = print_count.c check_items_in_map.c check_error.c move_player_left.c move_player_right.c move_player_down.c move_player_up.c check_key.c put_tiles_png.c put_tiles_exit.c put_tiles_ground.c put_tiles_coins.c put_tiles_wall.c put_tilesets.c get_array_with_ber.c put_img.c so_long.c gnlstruc/get_next_line_utils.c gnlstruc/get_next_line.c
+SRC = put_tiles_monster.c print_count.c check_items_in_map.c check_error.c move_player_left.c move_player_right.c move_player_down.c move_player_up.c check_key.c put_tiles_png.c put_tiles_exit.c put_tiles_ground.c put_tiles_coins.c put_tiles_wall.c put_tilesets.c get_array_with_ber.c put_img.c so_long.c gnlstruc/get_next_line_utils.c gnlstruc/get_next_line.c
 
 OBJ = $(SRC:.c=.o)
 
