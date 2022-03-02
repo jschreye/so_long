@@ -6,14 +6,14 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 09:29:31 by jschreye          #+#    #+#             */
-/*   Updated: 2022/03/01 16:18:15 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/03/02 15:53:41 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx/mlx.h"
 #include "so_long.h"
 
-int ft_close()
+int	ft_close(void)
 {
 	exit(0);
 }
@@ -21,7 +21,7 @@ int ft_close()
 int	main(int argc, char **argv)
 {
 	t_data	img;
-	
+
 	if (argc <= 1)
 		exit(0);
 	img.fd = open(argv[1], O_RDONLY);
@@ -34,6 +34,6 @@ int	main(int argc, char **argv)
 	ft_put_tilesets(&img);
 	ft_print_count(&img);
 	mlx_key_hook(img.mlx_win, ft_check_key, &img);
-	mlx_hook(img.mlx_win, 17, 1L<<0, ft_close, &img);
+	mlx_hook(img.mlx_win, 17, 1L << 0, ft_close, &img);
 	mlx_loop(img.mlx);
 }

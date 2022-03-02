@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:27:33 by jschreye          #+#    #+#             */
-/*   Updated: 2022/03/01 16:33:03 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/03/02 15:12:00 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 #include "so_long.h"
 #include "mlx/mlx.h"
 
-void ft_check_size(t_data *img);
+void	ft_check_size(t_data *img);
 
 void	ft_get_array_with_ber(t_data *img)
 {
-	char    *tab;
-    char    *str_full_ber;
+	char	*tab;
+	char	*str_full_ber;
 	char	*tmp;
 
 	img->size_j = -1;
 	str_full_ber = ft_strdup("");
-   	while (1)
+	while (1)
 	{
 		tab = get_next_line(img->fd);
 		tmp = str_full_ber;
@@ -32,7 +32,7 @@ void	ft_get_array_with_ber(t_data *img)
 		if (tab != NULL)
 			str_full_ber = ft_strjoin(str_full_ber, tab);
 		if (tab == NULL)
-			break;
+			break ;
 		free(tmp);
 		free(tab);
 	}
@@ -41,10 +41,10 @@ void	ft_get_array_with_ber(t_data *img)
 	ft_check_size(img);
 }
 
-void ft_check_size(t_data *img)
+void	ft_check_size(t_data *img)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;

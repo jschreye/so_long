@@ -6,20 +6,20 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 09:29:41 by jschreye          #+#    #+#             */
-/*   Updated: 2022/03/02 13:53:13 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/03/02 15:59:40 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mlx/mlx.h"
-#include "printf/ft_printf.h"
-#include <stdio.h>
-#include <fcntl.h>
-#include "gnlstruc/get_next_line.h"
-#include "libft/libft.h"
 #ifndef SO_LONG_H
 # define SO_LONG_H
+# include "mlx/mlx.h"
+# include "printf/ft_printf.h"
+# include <stdio.h>
+# include <fcntl.h>
+# include "gnlstruc/get_next_line.h"
+# include "libft/libft.h"
 
-typedef struct	s_data {
+typedef struct s_data {
 	void		*img;
 	void		*mlx;
 	void		*mlx_win;
@@ -59,16 +59,16 @@ void	ft_put_tilesets(t_data *img);
 void	ft_check_value_array(t_data *img);
 void	ft_check_error(char *argv, t_data *img);
 void	ft_check_items_in_map(t_data *img);
-void    ft_count_items(char c, t_data *img);
-void    ft_print_count(t_data *img);
-void    ft_put_tiles_coins(t_data *img);
+void	ft_count_items(char c, t_data *img);
+void	ft_print_count(t_data *img);
+void	ft_put_tiles_coins(t_data *img);
 void	ft_put_tiles_exit(t_data *img);
 void	ft_put_tiles_exit_two(t_data *img);
-void    ft_put_tiles_monster(t_data *img);
-void    ft_move_monster_down(t_data *img);
-void    ft_move_monster_up(t_data *img);
-void    ft_move_monster_right(t_data *img);
-void    ft_move_monster_left(t_data *img);
+void	ft_put_tiles_monster(t_data *img);
+void	ft_move_monster_down(t_data *img);
+void	ft_move_monster_up(t_data *img);
+void	ft_move_monster_right(t_data *img);
+void	ft_move_monster_left(t_data *img);
 void	ft_put_monster(t_data *img);
 int		ft_check_key(int keycode, t_data *img);
 

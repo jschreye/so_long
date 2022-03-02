@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 15:24:15 by jschreye          #+#    #+#             */
-/*   Updated: 2022/02/23 12:37:22 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/03/02 15:15:21 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,4 @@ char	*get_next_line(int fd)
 		c = read_check(&info);
 	}
 	return (str);
-
 }

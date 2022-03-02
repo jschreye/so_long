@@ -6,13 +6,13 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 13:53:18 by jschreye          #+#    #+#             */
-/*   Updated: 2022/03/02 11:33:33 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/03/02 15:39:56 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void  ft_put_tiles_exit(t_data *img)
+void	ft_put_tiles_exit(t_data *img)
 {
 	img->relative_path = "img/herbe.xpm";
 	ft_put_img(img);
