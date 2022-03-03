@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 09:29:41 by jschreye          #+#    #+#             */
-/*   Updated: 2022/03/02 15:59:40 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/03/03 09:03:40 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_data {
 	int			count_p;
 	int			count_e;
 	int			count_c;
+	int			count_m;
 	int			count_move;
 	int			i;
 	int			j;

@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:12:04 by jschreye          #+#    #+#             */
-/*   Updated: 2022/03/02 14:24:02 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/03/03 09:11:47 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	ft_count_items(char c, t_data *img)
 		img->count_e++;
 	if (c == 'C')
 		img->count_c++;
+	if (c == 'M')
+		img->count_m++;
 }
 
 void	ft_check_items_in_map(t_data *img)
@@ -37,6 +39,11 @@ void	ft_check_items_in_map(t_data *img)
 	if (img->count_c < 1)
 	{
 		write (1, "Error\n NO COINS", 15);
+		exit(0);
+	}
+	if (img->count_m > 1)
+	{
+		write (1, "Error\n", 6);
 		exit(0);
 	}
 }

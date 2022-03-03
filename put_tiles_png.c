@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:27:33 by jschreye          #+#    #+#             */
-/*   Updated: 2022/03/02 16:26:24 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/03/03 09:15:08 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	ft_put_img_png_down(t_data *img)
 
 void	ft_put_img_png(t_data *img)
 {
-	ft_put_img_png_left(img);
+	ft_put_img_png_right(img);
 	if (img->keycode_value == 0 || img->keycode_value == 123)
 		ft_put_img_png_left(img);
 	if (img->keycode_value == 2 || img->keycode_value == 124)

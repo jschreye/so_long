@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:28:00 by jschreye          #+#    #+#             */
-/*   Updated: 2022/03/02 14:11:47 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/03/03 09:08:46 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ void	ft_check_error(char *argv, t_data *img)
 		i = 0;
 		while (img->array[j][i] != '\0')
 		{
-			ft_check_items(img->array[j][i]);
-			ft_check_around_map(i, j, img);
 			ft_count_items(img->array[j][i], img);
+			ft_check_around_map(i, j, img);
+			ft_check_items(img->array[j][i]);
 			i++;
 		}
 		j++;
